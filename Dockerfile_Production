@@ -3,7 +3,7 @@ WORKDIR /build_output
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY Master.sln ./
+COPY TrialPurgeScheduledTask.sln ./
 COPY . .
 RUN dotnet restore -nowarn:msb3202,nu1503
 WORKDIR /src/
