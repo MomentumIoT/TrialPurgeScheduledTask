@@ -7,10 +7,10 @@ COPY TrialPurgeScheduledTask.sln ./
 COPY . .
 RUN dotnet restore -nowarn:msb3202,nu1503
 WORKDIR /src/
-RUN dotnet build -c Staging -o /build_output TrialPurgeScheduledTask/TrialPurgeScheduledTask.csproj
+RUN dotnet build -c Staging -o /build_output TrialPurgeScheduledTask.csproj
 
 FROM build AS publish
-RUN dotnet publish -c Staging -o /build_output TrialPurgeScheduledTask/TrialPurgeScheduledTask.csproj
+RUN dotnet publish -c Staging -o /build_output TrialPurgeScheduledTask.csproj
 
 FROM base AS final
 WORKDIR /build_output
